@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>slType</servlet-name>
-        <servlet-class>servlets.slType</servlet-class>
+        <servlet-class>entities.slType</servlet-class>
     </servlet>
 
     <servlet-mapping>

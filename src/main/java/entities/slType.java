@@ -1,4 +1,4 @@
-package servlets;
+package entities;
 
 import data.dtType;
 import entities.tables.typeTable;
@@ -21,6 +21,9 @@ public class slType extends HttpServlet {
     dtType dtt = new dtType();
     int id;
 
+    public slType() {
+        super();
+    }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

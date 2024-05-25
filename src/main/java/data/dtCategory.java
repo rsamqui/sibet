@@ -38,10 +38,9 @@ public class dtCategory {
 
             while (this.rsCategory.next()) {
                 vwTypeCategory cat = new vwTypeCategory();
-                cat.setTcId(this.rsCategory.getInt("tcId"));
-                cat.setType(this.rsCategory.getString("type"));
-                cat.setCat(this.rsCategory.getString("cat"));
-                cat.setDesc(this.rsCategory.getString("desc"));
+                cat.setTcId(this.rsCategory.getInt("ID"));
+                cat.setType(this.rsCategory.getString("Tipo"));
+                cat.setCat(this.rsCategory.getString("Categoria"));
 
                 listCat.add(cat);
             }

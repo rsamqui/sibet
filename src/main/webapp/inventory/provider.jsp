@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="UTF-8" import="data.*, entities.tables.providerTable, java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -205,7 +208,7 @@
     <h1>Proveedor</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">Inventario</a></li>
+        <li class="breadcrumb-item">Inventario</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -216,6 +219,13 @@
 
       <!-- Table with stripped rows -->
       <table class="table datatable">
+
+        <%
+          ArrayList<providerTable> listProviders = new ArrayList<providerTable>();
+          dtProvider dtp = new dtProvider();
+          listProviders = dtp.listProviders();
+        %>
+
         <thead>
         <tr>
           <th>ID</th>
@@ -229,13 +239,18 @@
         </tr>
         </thead>
         <tbody>
+
+        <%
+          for (providerTable provider : listProviders) {
+        %>
+
         <tr>
-          <td>1</td>
-          <td>JoJo's Ethernet</td>
-          <td>IDK </td>
-          <td>7777 8888</td>
-          <td>Managua</td>
-          <td>Sabrá Dios</td>
+          <td><%=provider.getProviderId()%></td>
+          <td><%=provider.getCompanyName()%></td>
+          <td><%=provider.getContactName()%></td>
+          <td><%=provider.getPhoneNumber()%></td>
+          <td><%=provider.getCity()%></td>
+          <td><%=provider.getAddress()%></td>
           <td>
             <a href="/provider-forms/read-provider-form.html">
               <button class="btn btn-primary w-30" type="button">Ver</button>
@@ -250,8 +265,9 @@
           </td>
         </tr>
 
-
-
+          <%
+            }
+          %>
         </tbody>
       </table>
       <!-- End Table with stripped rows -->

@@ -227,19 +227,14 @@
         <th>Tipo</th>
         <th>Nombre de la categoria</th>
         <th>Descripción</th>
-
-
       </tr>
       </thead>
       <tbody>
-
       <% for(vwTypeCategory cat : listCat){ %>
-
       <tr>
         <td><%=cat.getTcId()%></td>
         <td><%=cat.getType()%></td>
         <td><%=cat.getCat()%></td>
-        <td><%=cat.getDesc()%></td>
         <td>
           <a href="/category-forms/read-category-form.html">
             <button class="btn btn-primary w-45" type="button">Ver</button>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; ISO-8859-1" pageEncoding="iso-8859-1" import="entities.tables.*, data.*, java.util.*" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -205,7 +207,7 @@
       <h1>Productos</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">Inventario</a></li>
+          <li class="breadcrumb-item">Inventario</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -216,28 +218,32 @@
 
         <!-- Table with stripped rows -->
         <table class="table datatable">
+
+          <%
+            ArrayList<itemTable> listItem = new ArrayList<itemTable>();
+            dtItem dti = new dtItem();
+            listItem = dti.listItems();
+          %>
+
           <thead>
           <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Descripción</th>
+            <th>Descripci�n</th>
             <th>Cantidad</th>
             <th>Precio</th>
-            <th>Tipo</th>
-            <th>Categoria</th>
             <th>Opciones</th>
 
           </tr>
           </thead>
           <tbody>
+          <% for (itemTable item : listItem) { %>
           <tr>
-            <td>1</td>
-            <td>Arris DG2460</td>
-            <td>Módem de Internet </td>
-            <td>125</td>
-            <td>50</td>
-            <td>1</td>
-            <td>1</td>
+            <td><%=item.getItemId()%></td>
+            <td><%=item.getName()%></td>
+            <td><%=item.getDescription()%></td>
+            <td><%=item.getQuantity()%></td>
+            <td><%="C$ "+item.getPrice()%></td>
             <td>
               <a href="/items-forms/read-item-form.html">
                 <button class="btn btn-primary w-45" type="button">Ver</button>
@@ -252,7 +258,7 @@
             </td>
           </tr>
 
-
+            <% } %>
 
           </tbody>
         </table>

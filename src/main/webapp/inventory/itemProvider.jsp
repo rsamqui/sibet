@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="UTF-8" import="data.*, entities.tables.providerTable, java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="en">
 

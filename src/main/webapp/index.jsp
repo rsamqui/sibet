@@ -130,7 +130,7 @@
       <li class="nav-heading">Inventario</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../slType?accion=listar">
+        <a class="nav-link collapsed" href="inventory/item.jsp">
           <i class="bi bi-box-seam"></i>
           <span>Productos</span>
         </a>
